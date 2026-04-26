@@ -181,14 +181,10 @@ video, audio {
 }
 
 
- */
-#tabela caption {
-    caption-side: top;
+#titulotabela {
     text-align: center;
-    font-size: 26px;
     font-weight: sans-serif;
-    margin-bottom: 15px;
-    color: #17172c;
+    color: #07070e;
 }
 
 /* CABEÇALHO */
