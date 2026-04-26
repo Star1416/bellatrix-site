@@ -1,0 +1,356 @@
+/*REINICIA*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+/*Animação suave ao clicar no menu*/
+html {
+    scroll-behavior: smooth;
+}
+
+/*FUNDO DO SITE TODO*/
+body{
+    background: linear-gradient(rgba(253, 124, 255, 0.6), rgba(78, 27, 102, 0.6)), url("img/fundo-rosa.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding-top: 70px;
+}
+
+
+#home {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    padding: 40px;
+    color: rgb(21, 17, 17);
+}
+
+
+#home p {       /*Parágrafo home*/
+    font-size: 20px;
+    max-width: 700px;
+    line-height: 1.5;
+    font-family: sans-serif;
+    backdrop-filter: blur(8px);
+
+    /* ANIMAÇÃO */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: Home 0.9s ease forwards;
+    animation-delay: 0.5s;
+}
+@keyframes Home {
+    from {
+        opacity: 0;
+        transform: translateY(0px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#logo {
+    width: 500px;
+
+    opacity: 0;
+    transform: scale(0.9);
+
+    animation: aparecerLogo 2s ease forwards;
+
+    filter: drop-shadow(0 0 20px rgba(255, 79, 163, 0.5));
+
+    transition: 0.4s;
+}
+
+/* ANIMAÇÃO DE ENTRADA SUAVE */
+@keyframes aparecerLogo {
+    0% {
+        opacity: 0;
+        transform: scale(0.85);
+    }
+    60% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* HOVER DISCRETO */
+#logo:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 30px rgba(255, 79, 163, 0.9));
+}
+
+
+/*  QUEM SOMOS  */
+#quem-somos ul{
+    text-align: justify;
+    margin: 25px;
+    font-family: sans-serif;
+}
+
+video, audio {
+    display: block;
+    margin: 40px auto;
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+#galeria {
+    display: flex;
+    justify-content: center;   /* centraliza horizontalmente */
+    align-items: center;       /* centraliza verticalmente */
+    margin-top: 50px;
+}
+
+/* TAMANHO DO CAROUSEL */
+.carousel-custom {
+    width: 500px;
+    height: 330px;
+    position: relative;
+}
+
+/* ITEM */
+.carousel-custom .carousel-item {
+    height: 100%;
+    width: 100%;
+}
+
+/* CARD */
+.card-custom {
+    position: relative;
+    width: 100%;
+    height: 330px; /* altura fixa para todas as imagens */
+    overflow: hidden; /* evita que imagem estoure o container */
+}
+
+/* IMAGEM */
+.card-custom img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* INDICADORES */
+.carousel-indicators {
+    bottom: -40px; /* joga as bolinhas para fora do carousel */
+}
+
+/* OVERLAY */
+.overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    text-align: center;
+}
+
+
+
+/*ESTILIZANDO A TABELA DE CONQUISTAS*/
+
+/* TABELA */
+#tabela {
+    width: 50%;
+    margin: 20px auto;
+    text-align: center;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+    border: 2px solid rgba(0,0,0,0.2);
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    background: rgba(233, 215, 215, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+
+ */
+#tabela caption {
+    caption-side: top;
+    text-align: center;
+    font-size: 26px;
+    font-weight: sans-serif;
+    margin-bottom: 15px;
+    color: #17172c;
+}
+
+/* CABEÇALHO */
+#tabela thead {
+    background: linear-gradient(45deg, #bb64cd, #bf6892);
+    padding: 15px;
+    color: #17172c;
+}
+
+#tabela th {
+    padding: 15px;
+    font-size: 18px;
+}
+
+/* LINHAS */
+#tabela td {
+    padding: 12px;
+    font-size: 16px;
+    color: #17172c;
+}
+
+/* EFEITO HOVER */
+#tabela tbody tr:hover {
+    background: rgba(255, 79, 163, 0.2);
+    transition: 0.3s;
+}
+
+#tabela thead tr th:first-child {
+    border-top-left-radius: 15px;
+}
+
+#tabela thead tr th:last-child {
+    border-top-right-radius: 15px;
+}
+
+
+
+
+/*ESTILIZAR SEÇÕES(SECTIONS)*/
+section{
+    padding: 80px 60px 30px;
+    text-align: center;
+}
+
+#contatos{
+    padding-top: 120px;
+}
+
+
+
+/*CONTATOS - FORMULÁRIO*/
+form{
+    display: flex;
+    flex-direction: column;
+    max-width: 450px;
+    margin: 40px auto;
+    padding: 30px;
+    background: rgba(232, 147, 220, 0.688); /* Fundo combinando com o tema */
+    backdrop-filter: blur(10px);
+    border: 2px solid rgb(191, 52, 179);  /* Borda elegante rosa */
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); /*sombra suave*/
+}
+
+form label{     /*Estilizando o label (o formulário todo)*/
+    text-align: left;
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+form input, textarea{   /*Estilizando o input (nome e email) e textarea (mensagem)*/
+    padding: 12px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.3s;
+}
+
+#titulo-do-formulario{
+    text-align: center;
+    font-family: sans-serif;
+}
+
+form input:focus, form textarea:focus{
+    border: 1px solid rgb(191, 52, 179);
+    box-shadow: 0 0 8px rgba(191, 52, 179, 0.5);
+}
+
+form button{    /*botão de enviar*/
+    background: #17172c;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+form button:hover{     /*Quando passa o mouse em cima do botão, fica rosa*/
+    background: rgb(191, 52, 179);
+    transition: 0.5s;
+}
+
+
+
+
+/*FOOTER*/
+footer{
+    background: #17172c;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+footer p {
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+footer ul li a {
+    text-decoration: none;
+    color: #c946e4;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+footer ul li a:hover {
+    color: #fff;
+    border-bottom: 2px solid #00bcd4;
+}
+
+footer p:last-child {
+    font-size: 14px;
+    color: #aaa;
+}
+
+
+
+
+/*TEXTOS ESTILIZADOS*/
+#quem-somos, #integrantes, #conquistas, #contatos, form p{     /*Parágrafo*/
+    text-align: justify;
+    font-size: 20px;
+    line-height: 1.5;
+    font-family: sans-serif;
+}
+
+#quem-somos, #integrantes, #conquistas, #contatos, form h2{    /*Título*/
+    text-align: justify;
+    font-size: 20px;
+    line-height: 1.5;
+    font-family: sans-serif;
+}
+
