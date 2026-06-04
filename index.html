@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="scroll-progress"></div>
         <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top border-bottom border-body" data-bs-theme="dark">
     <div class="container-fluid d-flex align-items-center">
         
@@ -225,6 +226,24 @@
         </form>
     </section>
 
+    <div id="sucesso-overlay">
+        <div id="sucesso-box">
+            <h2> Solicitação enviada!</h2>
+
+            <p>
+                Obrigado pelo interesse em apoiar a equipe Bellatrix.
+                Sua solicitação de patrocínio foi enviada com sucesso.
+            </p>
+
+            <p id="data-envio"></p>
+
+            <button id="fechar-overlay">
+                Fechar
+            </button>
+        </div>
+    </div>
+
+
         <footer>
             <p>Siga-nos nas redes sociais:</p>
             <ul>
@@ -238,5 +257,7 @@
         </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+    <script src="script.js"></script>
 </body>
 </html>

@@ -21,6 +21,38 @@ body{
 }
 
 
+
+/*Animações de entrada em cada seção*/
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/*FUNCIONALIDADE 2 — BARRA DE PROGRESSO DE LEITURA
+   Faixa fina no topo da página que cresce conforme o scroll*/
+#scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    width: 0%;                                      /* começa em 0, JS atualiza */
+    background: linear-gradient(90deg, #ff4fa3, #bf3eb3, #fd7cff);
+    z-index: 9999;                                  /* acima de tudo, incluindo a navbar */
+    transition: width 0.1s linear;
+    box-shadow: 0 0 8px rgba(255, 79, 163, 0.8);   /* brilho rosa */
+}
+
+
+
+
+
 #home {
     height: 100vh;
     display: flex;
@@ -350,3 +382,91 @@ footer p:last-child {
     font-family: sans-serif;
 }
 
+
+
+
+/* OVERLAY DE SUCESSO*/
+
+#sucesso-overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0,0,0,0.8);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.4s ease;
+
+    z-index: 10000;
+}
+
+#sucesso-overlay.ativo{
+    opacity: 1;
+    visibility: visible;
+}
+
+#sucesso-box{
+    background: rgba(255,255,255,0.95);
+
+    width: 90%;
+    max-width: 500px;
+
+    padding: 35px;
+
+    text-align: center;
+
+    border-radius: 20px;
+
+    box-shadow: 0 0 30px rgba(255,79,163,0.8);
+
+    animation: aparecerModal 0.5s ease;
+}
+
+#sucesso-box h2{
+    color: rgb(191, 52, 179);
+    margin-bottom: 15px;
+}
+
+#sucesso-box p{
+    color: #17172c;
+    margin-bottom: 15px;
+}
+
+#fechar-overlay{
+    background: #17172c;
+    color: white;
+
+    border: none;
+
+    padding: 12px 25px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+#fechar-overlay:hover{
+    background: rgb(191, 52, 179);
+}
+
+@keyframes aparecerModal{
+    from{
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    to{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
